@@ -5,6 +5,8 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  // Add base path for GitHub Pages - replace 'your-repo-name' with your actual repository name
+  base: process.env.NODE_ENV === 'production' ? '/mounika-data-verse-main/' : '/',
   server: {
     host: "::",
     port: 8080,

@@ -1,5 +1,21 @@
+# Mounika Avutu - Data Engineer Portfolio
 
+This is a modern portfolio website built with React, TypeScript, and Vite, showcasing data engineering projects and skills.
 
+## GitHub Pages Deployment
+
+This project is configured to deploy to GitHub Pages. There are two ways to deploy:
+
+### Option 1: Automatic Deployment (Recommended)
+1. Push your changes to the `main` or `master` branch
+2. GitHub Actions will automatically build and deploy your site
+3. Your site will be available at `https://yourusername.github.io/mounika-data-verse-main/`
+
+### Option 2: Manual Deployment
+1. Run the build command: `npm run build`
+2. Deploy to GitHub Pages: `npm run deploy`
+
+## Development Setup
 
 **Use your preferred IDE**
 
@@ -46,5 +62,12 @@ This project is built with:
 - React
 - shadcn-ui
 - Tailwind CSS
+
+## Troubleshooting
+
+If you encounter blank pages on GitHub Pages:
+1. Make sure the repository name in `vite.config.ts` matches your actual repository name
+2. Ensure GitHub Pages is enabled in your repository settings
+3. Check that the source is set to "GitHub Actions" in the Pages settings
 
 
