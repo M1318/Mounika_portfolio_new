@@ -1,0 +1,226 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    /* Optimize touch scrolling */
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: none;
+    scroll-behavior: smooth;
+  }
+  
+  /* Touch device optimizations */
+  html {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: none;
+    scroll-behavior: smooth;
+  }
+}
+
+/* Touch-specific scroll optimizations */
+@media (pointer: coarse) {
+  * {
+    /* Reduce animations on touch devices for better performance */
+    animation-duration: 0.1s !important;
+    transition-duration: 0.1s !important;
+  }
+  
+  body {
+    /* Enhanced touch scrolling */
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    scroll-behavior: auto; /* Disable smooth scroll on touch for better performance */
+  }
+  
+  .animate-slide-up {
+    animation: none; /* Disable complex animations on touch */
+  }
+  
+  .floating-particle {
+    animation: none; /* Disable floating animations on touch */
+  }
+  
+  .neural-connection {
+    animation: none; /* Disable neural animations on touch */
+  }
+}
+
+/* Optimized animation for the sliding job title */
+@keyframes slide-up {
+  0% { transform: translateY(0); }
+  25% { transform: translateY(-100%); }
+  50% { transform: translateY(-200%); }
+  75% { transform: translateY(-300%); }
+  100% { transform: translateY(0); }
+}
+
+.animate-slide-up {
+  animation: slide-up 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  will-change: transform;
+}
+
+/* Optimized floating animation */
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+  50% { 
+    transform: translateY(-15px);
+    opacity: 0.9;
+  }
+}
+
+/* Simplified spinning animation */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Reduced complexity pulse effect */
+@keyframes pulse-glow {
+  0%, 100% { 
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.3);
+    transform: scale(1);
+  }
+  50% { 
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.6);
+    transform: scale(1.02);
+  }
+}
+
+/* Optimized neural pulse */
+@keyframes neural-pulse {
+  0%, 100% { 
+    stroke-dashoffset: 50;
+    opacity: 0.2;
+  }
+  50% { 
+    stroke-dashoffset: 0;
+    opacity: 0.8;
+  }
+}
+
+/* Performance optimized hover effects */
+.hover-lift {
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px) scale(1.01);
+}
+
+/* Touch-friendly hover effects */
+@media (pointer: coarse) {
+  .hover-lift:hover {
+    transform: none; /* Disable hover effects on touch */
+  }
+}
+
+/* Optimized data visualization effects */
+.data-bar {
+  animation: pulse-glow 3s ease-in-out infinite;
+  will-change: box-shadow, transform;
+}
+
+.neural-connection {
+  stroke-dasharray: 5, 3;
+  animation: neural-pulse 4s ease-in-out infinite;
+  will-change: stroke-dashoffset, opacity;
+}
+
+/* Performance optimized particle effects */
+.floating-particle {
+  animation: float 4s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+/* Optimized text effects */
+.text-glow {
+  text-shadow: 0 0 8px rgba(59, 130, 246, 0.4);
+}
+
+.text-glow-intense {
+  text-shadow: 
+    0 0 3px rgba(59, 130, 246, 0.6),
+    0 0 6px rgba(59, 130, 246, 0.4);
+}
+
+/* Hardware acceleration for better performance */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Touch scrolling optimizations */
+.touch-scroll-optimized {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  scroll-behavior: auto;
+  transform: translateZ(0); /* Force hardware acceleration */
+}
+
+/* Reduce motion for users who prefer it OR on touch devices */
+@media (prefers-reduced-motion: reduce), (pointer: coarse) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
